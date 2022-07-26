@@ -29,8 +29,6 @@ namespace Movie_search.Logic
             HttpResponseMessage response = client.GetAsync(search+key+title).Result;
             if (response.IsSuccessStatusCode)
             {
-                //var dataObjects = response.Content.ReadAsStringAsync().Result;
-                //JObject jsonString = JObject.Parse(dataObjects);
                 JObject jsonString = Parse(response);
                 List<Movie> movies = new List<Movie>();
                 foreach( var movie in jsonString.SelectToken("results"))

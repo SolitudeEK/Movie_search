@@ -20,7 +20,7 @@ namespace Movie_search.Controllers
                 return null;
             else
             {
-                List<Movie> movies= reader.FindByTitle(title);
+                List<Movie> movies = reader.FindByTitle(title);
                 if (movies.Count > limit)
                     return movies.GetRange(0, limit);
                 else
